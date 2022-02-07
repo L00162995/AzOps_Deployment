@@ -11,14 +11,14 @@
   "resources": [
     {
       "type": "Microsoft.Management/managementGroups",
-      "name": "2397d9a6-9833-4f24-a4fe-bf5dbe78c082",
+      "name": "JRG",
       "apiVersion": "2021-04-01",
       "scope": "/",
       "properties": {
-        "displayName": "Tenant Root Group",
+        "displayName": "JRG",
         "details": {
           "parent": {
-            "id": null
+            "id": "/providers/Microsoft.Management/managementGroups/2397d9a6-9833-4f24-a4fe-bf5dbe78c082"
           }
         }
       }
@@ -37,13 +37,13 @@
             {
               "type": "Microsoft.Management/managementGroups",
               "apiVersion": "2020-05-01",
-              "name": "jrg-",
+              "name": "JRG-landingzones",
               "scope": "/",
               "properties": {
-                "displayName": "jrg-",
+                "displayName": "JRG-landingzones",
                 "details": {
                   "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/2397d9a6-9833-4f24-a4fe-bf5dbe78c082"
+                    "id": "/providers/Microsoft.Management/managementGroups/JRG"
                   }
                 }
               }
@@ -51,13 +51,41 @@
             {
               "type": "Microsoft.Management/managementGroups",
               "apiVersion": "2020-05-01",
-              "name": "JRG",
+              "name": "JRG-platform",
               "scope": "/",
               "properties": {
-                "displayName": "JRG",
+                "displayName": "JRG-platform",
                 "details": {
                   "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/2397d9a6-9833-4f24-a4fe-bf5dbe78c082"
+                    "id": "/providers/Microsoft.Management/managementGroups/JRG"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "JRG-sandboxes",
+              "scope": "/",
+              "properties": {
+                "displayName": "JRG-sandboxes",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/JRG"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "JRG-decommissioned",
+              "scope": "/",
+              "properties": {
+                "displayName": "JRG-decommissioned",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/JRG"
                   }
                 }
               }
@@ -67,7 +95,7 @@
         }
       },
       "dependsOn": [
-        "/providers/Microsoft.Management/managementGroups/2397d9a6-9833-4f24-a4fe-bf5dbe78c082"
+        "/providers/Microsoft.Management/managementGroups/JRG"
       ]
     }
   ],

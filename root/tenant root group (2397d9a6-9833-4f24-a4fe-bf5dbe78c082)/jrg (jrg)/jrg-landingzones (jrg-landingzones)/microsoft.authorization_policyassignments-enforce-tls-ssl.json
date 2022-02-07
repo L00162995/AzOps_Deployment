@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Enforce-TLS-SSL",
+      "apiVersion": "2021-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "e94406cb-8092-4abe-b7b9-e52057fd7586",
+        "TenantId": "2397d9a6-9833-4f24-a4fe-bf5dbe78c082",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/JRG-landingzones",
+        "NotScopes": null,
+        "DisplayName": "Deny or Deploy and append TLS requirements and SSL enforcement on resources without Encryption in transit",
+        "Description": "Choose either Deploy if not exist and append in combination with audit or Select Deny in the Policy effect. Deny polices shift left. Deploy if not exist and append enforce but can be changed, and because missing exsistense condition require then the combination of Audit.",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/JRG/providers/Microsoft.Authorization/policySetDefinitions/Enforce-EncryptTransit",
+        "Parameters": {},
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}

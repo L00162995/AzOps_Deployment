@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-SQL-DB-Auditing",
+      "apiVersion": "2021-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "18fe4a1f-54ad-4d84-9ef3-680fd7b560b7",
+        "TenantId": "2397d9a6-9833-4f24-a4fe-bf5dbe78c082",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/JRG-landingzones",
+        "NotScopes": null,
+        "DisplayName": "Auditing on SQL server should be enabled",
+        "Description": "Auditing on your SQL Server should be enabled to track database activities across all databases on the server and save them in an audit log.",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9",
+        "Parameters": null,
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}

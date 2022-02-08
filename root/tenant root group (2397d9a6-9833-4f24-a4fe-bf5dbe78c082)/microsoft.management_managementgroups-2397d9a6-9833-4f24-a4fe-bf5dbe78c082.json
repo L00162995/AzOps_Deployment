@@ -37,20 +37,6 @@
             {
               "type": "Microsoft.Management/managementGroups",
               "apiVersion": "2020-05-01",
-              "name": "jrg-",
-              "scope": "/",
-              "properties": {
-                "displayName": "jrg-",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/2397d9a6-9833-4f24-a4fe-bf5dbe78c082"
-                  }
-                }
-              }
-            },
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
               "name": "JRG",
               "scope": "/",
               "properties": {
